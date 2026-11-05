@@ -24,3 +24,5 @@ logs/
 wandb/
 # Local original; tracked copy is day01/code.py
 /tensor_basics.py
+# Local original; tracked copy is day02/code.py
+/grad.py

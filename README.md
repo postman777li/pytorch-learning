@@ -9,7 +9,7 @@
 | 天数 | 主题与要点 | 文件 | 状态 |
 |---|---|---|---|
 | Day 1 | Tensor：创建、维度/Shape、索引/切片、广播、矩阵运算、dtype | [概念](day01/notes.md) · [代码](day01/code.py) | 已归档本人练习，运行通过；独立验收未记录 |
-| Day 2 | Autograd：计算图、requires_grad、grad_fn、backward、梯度累积、detach、no_grad | [概念](day02/notes.md) · [代码](day02/code.py) | 待学习 |
+| Day 2 | Autograd：计算图、requires_grad、grad_fn、backward、梯度累积、detach、no_grad | [概念](day02/notes.md) · [代码](day02/code.py) | 已归档本人练习，运行通过；独立验收未记录 |
 | Day 3 | nn.Module：__init__、forward、Linear、Sequential、Parameter、parameters、state_dict | [概念](day03/notes.md) · [代码](day03/code.py) | 待学习 |
 | Day 4 | 设备与模式：CPU/CUDA、to、train/eval、no_grad、参数/缓冲区、种子与可复现 | [概念](day04/notes.md) · [代码](day04/code.py) | 待学习 |
 
@@ -21,13 +21,15 @@
 
 ```bash
 python day01/code.py
+python day02/code.py
 ```
 
-已使用 Python 3.12 / PyTorch 2.11.0+cu128 实际运行 Day1（张量默认在 CPU）。Day2–4 只有注释占位，不代表已实现或验证。
+已使用 Python 3.12 / PyTorch 2.11.0+cu128 实际运行 Day1、Day2（张量默认在 CPU）。Day3–4 只有注释占位，不代表已实现或验证。
 
 ## 来源与后续更新
 
 - 结构、文件名和公开仓库习惯参考 `postman777li/transformer-learning`。
 - Day1 `code.py` 原样复制自本地 `tensor_basics.py`，字节一致；原文件留在本地并忽略，避免重复归档。类型转换返回值未接收等细节见概念文件。
+- Day2 `code.py` 原样复制自本地 `grad.py`，字节一致；概念结合学习会话中的梯度累积与 detach/no_grad 补充讲解。原文件留在本地并忽略。
 - 计划来源：《大模型学习路线规划》《学习Day1张量》。前者给出七阶段方向，后者仅明确模块一四天。
 - 每天学习后替换该日占位概念和代码，实际运行，再更新状态并提交。
