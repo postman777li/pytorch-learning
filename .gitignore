@@ -26,3 +26,5 @@ wandb/
 /tensor_basics.py
 # Local original; tracked copy is day02/code.py
 /grad.py
+# Local original; tracked copy is day04/code.py
+/device_and_mode.py
