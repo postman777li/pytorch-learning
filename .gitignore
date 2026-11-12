@@ -28,3 +28,6 @@ wandb/
 /grad.py
 # Local original; tracked copy is day04/code.py
 /device_and_mode.py
+# Local originals for day05 and day06
+/dataset.py
+/dataloader.py
