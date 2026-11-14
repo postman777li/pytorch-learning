@@ -2,7 +2,7 @@
 
 24 天 · 6 个模块 · 每模块 4 天。目标是完成数据加载、训练、优化、验证、保存、恢复与实验分析，最后整合为训练项目。
 
-计划来源为《PyTorch学习规划》，每日概念和代码按学习窗口与本地练习归档。当前已学习并归档 Day1–6，Day7–24 均为待学习占位。每天保留 `notes.md` 和 `code.py`。
+计划来源为《PyTorch学习规划》，每日概念和代码按学习窗口与本地练习归档。当前已学习并归档 Day1–8，Day9–24 均为待学习占位。每天保留 `notes.md` 和 `code.py`。
 
 ## 24 天完整计划
 
@@ -21,8 +21,8 @@
 |---|---|---|---|---|---|
 | Day 5 | Dataset | Dataset、`__init__`、`__len__`、`__getitem__`、样本与标签、数据集划分 | `dataset.py`：自己编写一个文本分类数据集 | [概念](day05/notes.md) · [代码](day05/code.py) | 练习已归档并运行 |
 | Day 6 | DataLoader | Batch、Batch Size、Shuffle、Sampler、num_workers、pin_memory、drop_last | `dataloader.py`：完成批量数据加载 | [概念](day06/notes.md) · [代码](day06/code.py) | 练习已归档并运行 |
-| Day 7 | Tokenization | Tokenizer 工作原理、文本编码、Token ID、Padding、Truncation、Attention Mask | `tokenization.py`：将文本转换为模型输入 | [概念](day07/notes.md) · [代码](day07/code.py) | 待学习 |
-| Day 8 | Data Collator | Data Collator、动态 Padding、Batch 内数据整理、输入格式统一、标签处理 | `collator.py`：自己编写一个文本任务的数据整理器 | [概念](day08/notes.md) · [代码](day08/code.py) | 待学习 |
+| Day 7 | Tokenization | Tokenizer 工作原理、文本编码、Token ID、Padding、Truncation、Attention Mask | `tokenization.py`：将文本转换为模型输入 | [概念](day07/notes.md) · [代码](day07/code.py) | 练习已归档并运行 |
+| Day 8 | Data Collator | Data Collator、动态 Padding、Batch 内数据整理、输入格式统一、标签处理 | `collator.py`：自己编写一个文本任务的数据整理器 | [概念](day08/notes.md) · [代码](day08/code.py) | 练习已归档并运行 |
 
 ### 模块3 · 模型训练完整流程（Day 9–12）
 
@@ -90,9 +90,11 @@ python day03/code.py
 python day04/code.py
 python day05/code.py
 python day06/code.py
+python day07/code.py
+python day08/code.py
 ```
 
-已在 Python 3.12 / PyTorch 2.11.0+cu128 环境运行 Day1–6，Day4 另验证 CPU 回退与 CUDA。生成权重被 Git 忽略。Day7–24 的代码文件仅有待学习注释，概念文件列明原计划主题和任务。
+已在 Python 3.12 / PyTorch 2.11.0+cu128 环境运行 Day1–8，Day4 另验证 CPU 回退与 CUDA。生成权重被 Git 忽略。Day9–24 的代码文件仅有待学习注释，概念文件列明原计划主题和任务。
 
 ## 来源与整理说明
 
@@ -104,5 +106,7 @@ python day06/code.py
 | day04 | 本地 device_and_mode.py，修正两处 CUDA 判断漏括号，权重改存脚本旁 |
 | day05 | 本地 dataset.py，__len__ 改用实例数据，补上文本/标签数量检查 |
 | day06 | 本地 dataloader.py 原样归档 |
+| day07 | 本地 tokenization.py 原样归档；概念保留原讲解并附 AutoTokenizer 补充问答 |
+| day08 | 本地 collator.py 原样归档；概念保留原讲解 |
 
-Day1–4 概念来自《学习Day1张量》，Day5–6 来自《学习Dataset数据集》，计划来自《PyTorch学习规划》。按学习窗口后续约定，每天提供完整代码与简短概念总结。学习与运行状态如实记录，不以脚本运行代替个人掌握情况。
+Day1–4 概念来自《学习Day1张量》，Day5–8 来自《学习Dataset数据集》，计划来自《PyTorch学习规划》。Day7 起概念保留学习窗口原文的循序渐进讲解、例子与代码说明，并适配 GitHub 显示。学习与运行状态如实记录，不以脚本运行代替个人掌握情况。
