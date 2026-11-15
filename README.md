@@ -2,7 +2,7 @@
 
 24 天 · 6 个模块 · 每模块 4 天。目标是完成数据加载、训练、优化、验证、保存、恢复与实验分析，最后整合为训练项目。
 
-计划来源为《PyTorch学习规划》，每日概念和代码按学习窗口与本地练习归档。当前已学习并归档 Day1–8，Day9–24 均为待学习占位。每天保留 `notes.md` 和 `code.py`。
+计划来源为《PyTorch学习规划》，每日概念和代码按学习窗口与本地练习归档。当前已学习并归档 Day1–10，Day11–24 均为待学习占位。每天保留 `notes.md` 和 `code.py`。
 
 ## 24 天完整计划
 
@@ -28,8 +28,8 @@
 
 | 天数 | 主题 | 学习内容 | 原计划代码与任务 | 归档 | 状态 |
 |---|---|---|---|---|---|
-| Day 9 | Forward & Loss | 前向传播、Logits、预测结果、损失函数、CrossEntropyLoss、MSELoss、标签与预测的对应关系 | `forward_loss.py`：完成模型预测和损失计算 | [概念](day09/notes.md) · [代码](day09/code.py) | 待学习 |
-| Day 10 | Backward & Optimizer | loss.backward()、梯度计算、Optimizer、zero_grad()、step()、参数更新 | `backward_optimizer.py`：手动观察一次完整参数更新 | [概念](day10/notes.md) · [代码](day10/code.py) | 待学习 |
+| Day 9 | Forward & Loss | 前向传播、Logits、预测结果、损失函数、CrossEntropyLoss、MSELoss、标签与预测的对应关系 | `forward_loss.py`：完成模型预测和损失计算 | [概念](day09/notes.md) · [代码](day09/code.py) | 练习已归档并运行 |
+| Day 10 | Backward & Optimizer | loss.backward()、梯度计算、Optimizer、zero_grad()、step()、参数更新 | `backward_optimizer.py`：手动观察一次完整参数更新 | [概念](day10/notes.md) · [代码](day10/code.py) | 练习已归档并运行 |
 | Day 11 | 完整训练循环 | Epoch、Iteration、Batch、Train Loop、训练顺序、梯度清零时机、训练过程中的指标统计 | `train_loop.py`：独立编写完整训练循环 | [概念](day11/notes.md) · [代码](day11/code.py) | 待学习 |
 | Day 12 | 验证与泛化 | Train / Validation / Test、数据集划分、过拟合、欠拟合、训练集与验证集表现、Early Stopping | `train_val.py`：训练并验证一个分类模型 | [概念](day12/notes.md) · [代码](day12/code.py) | 待学习 |
 
@@ -92,9 +92,11 @@ python day05/code.py
 python day06/code.py
 python day07/code.py
 python day08/code.py
+python day09/code.py
+python day10/code.py
 ```
 
-已在 Python 3.12 / PyTorch 2.11.0+cu128 环境运行 Day1–8，Day4 另验证 CPU 回退与 CUDA。生成权重被 Git 忽略。Day9–24 的代码文件仅有待学习注释，概念文件列明原计划主题和任务。
+已在 Python 3.12 / PyTorch 2.11.0+cu128 环境运行 Day1–10，Day4 另验证 CPU 回退与 CUDA。生成权重被 Git 忽略。Day11–24 的代码文件仅有待学习注释，概念文件列明原计划主题和任务。
 
 ## 来源与整理说明
 
@@ -108,5 +110,7 @@ python day08/code.py
 | day06 | 本地 dataloader.py 原样归档 |
 | day07 | 本地 tokenization.py 原样归档；概念保留原讲解并附 AutoTokenizer 补充问答 |
 | day08 | 本地 collator.py 原样归档；概念保留原讲解 |
+| day09 | 本地 forward_loss.py 原样归档；概念保留完整教学程序和反例 |
+| day10 | 本地 backward_optimizer.py 原样归档；概念保留推导、单步更新和参数检查 |
 
-Day1–4 概念来自《学习Day1张量》，Day5–8 来自《学习Dataset数据集》，计划来自《PyTorch学习规划》。Day1–8 概念均按学习窗口的教学顺序展开，保留设计动机、例子、反例、逐步代码说明与相关追问，并适配 GitHub 显示。学习与运行状态如实记录，不以脚本运行代替个人掌握情况。
+Day1–4 概念来自《学习Day1张量》，Day5–8 来自《学习Dataset数据集》，Day9–10 来自《学习Day9前向与损失》，计划来自《PyTorch学习规划》。Day1–10 概念均按学习窗口的教学顺序展开，保留设计动机、例子、反例、逐步代码说明与相关追问，并适配 GitHub 显示。学习与运行状态如实记录，不以脚本运行代替个人掌握情况。
