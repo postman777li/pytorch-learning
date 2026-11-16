@@ -2,7 +2,7 @@
 
 24 天 · 6 个模块 · 每模块 4 天。目标是完成数据加载、训练、优化、验证、保存、恢复与实验分析，最后整合为训练项目。
 
-计划来源为《PyTorch学习规划》，每日概念和代码按学习窗口与本地练习归档。当前已学习并归档 Day1–12，Day13–24 均为待学习占位。每天保留 `notes.md` 和 `code.py`。
+计划来源为《PyTorch学习规划》，每日概念和代码按学习窗口与本地练习归档。当前已学习 Day1–16。Day1–12、Day14–16 已归档代码，Day13 已整理概念，原窗口代码待补。Day17–24 为待学习占位。每天保留 `notes.md` 和 `code.py`。
 
 ## 24 天完整计划
 
@@ -37,10 +37,10 @@
 
 | 天数 | 主题 | 学习内容 | 原计划代码与任务 | 归档 | 状态 |
 |---|---|---|---|---|---|
-| Day 13 | SGD 优化器 | SGD、Momentum、梯度下降、学习率对参数更新的影响 | `sgd.py`：手动实现简化版 SGD，并与 PyTorch 对比 | [概念](day13/notes.md) · [代码](day13/code.py) | 待学习 |
-| Day 14 | Adam 与 AdamW | 一阶矩、二阶矩、动量、偏差修正、Weight Decay、Adam 与 AdamW 区别 | `adam_adamw.py`：比较三种优化器训练效果 | [概念](day14/notes.md) · [代码](day14/code.py) | 待学习 |
-| Day 15 | Learning Rate | Learning Rate、固定学习率、学习率过大与过小、学习率敏感性 | `learning_rate.py`：对比不同学习率下的训练曲线 | [概念](day15/notes.md) · [代码](day15/code.py) | 待学习 |
-| Day 16 | Learning Rate Scheduler | Warmup、Linear Decay、Cosine Decay、StepLR、LambdaLR、Scheduler 调用时机 | `lr_scheduler.py`：实现 Warmup + Cosine Decay | [概念](day16/notes.md) · [代码](day16/code.py) | 待学习 |
+| Day 13 | SGD 优化器 | SGD、Momentum、梯度下降、学习率对参数更新的影响 | `sgd.py`：手动实现简化版 SGD，并与 PyTorch 对比 | [概念](day13/notes.md) · [代码](day13/code.py) | 已学习，概念已整理，原窗口代码待补 |
+| Day 14 | Adam 与 AdamW | 一阶矩、二阶矩、动量、偏差修正、Weight Decay、Adam 与 AdamW 区别 | `adam_adamw.py`：比较三种优化器训练效果 | [概念](day14/notes.md) · [代码](day14/code.py) | 已学习，窗口教学代码已归档并运行 |
+| Day 15 | Learning Rate | Learning Rate、固定学习率、学习率过大与过小、学习率敏感性 | `learning_rate.py`：对比不同学习率下的训练曲线 | [概念](day15/notes.md) · [代码](day15/code.py) | 已学习，窗口教学代码已归档并运行 |
+| Day 16 | Learning Rate Scheduler | Warmup、Linear Decay、Cosine Decay、StepLR、LambdaLR、Scheduler 调用时机 | `lr_scheduler.py`：实现 Warmup + Cosine Decay | [概念](day16/notes.md) · [代码](day16/code.py) | 已学习，窗口教学代码已归档并运行 |
 
 ### 模块5 · 训练优化与稳定性（Day 17–20）
 
@@ -81,7 +81,7 @@ Day24 原计划产出为 `full_training_project/`。当前按每日两个文件�
 
 ## 运行
 
-需要 Python、PyTorch，Day4 另需 NumPy。PyTorch 的 CPU/CUDA 安装方式见[官方安装页](https://pytorch.org/get-started/locally/)。
+需要 Python、PyTorch，Day4 另需 NumPy，Day15–16 绘图需 Matplotlib。PyTorch 的 CPU/CUDA 安装方式见[官方安装页](https://pytorch.org/get-started/locally/)。
 
 ```bash
 python day01/code.py
@@ -96,9 +96,12 @@ python day09/code.py
 python day10/code.py
 python day11/code.py
 python day12/code.py
+python day14/code.py
+python day15/code.py
+python day16/code.py
 ```
 
-已在 Python 3.12 / PyTorch 2.11.0+cu128 环境运行 Day1–12，Day4 另验证 CPU 回退与 CUDA。生成权重被 Git 忽略。Day13–24 的代码文件仅有待学习注释，概念文件列明原计划主题和任务。
+已在 Python 3.12 / PyTorch 2.11.0+cu128 环境运行 Day1–12，Day4 另验证 CPU 回退与 CUDA。生成权重被 Git 忽略。Day17–24 的代码文件仅有待学习注释，概念文件列明原计划主题和任务。
 
 ## 来源与整理说明
 
@@ -116,5 +119,9 @@ python day12/code.py
 | day10 | 本地 backward_optimizer.py 原样归档；概念保留推导、单步更新和参数检查 |
 | day11 | 本地 train_loop.py，修正种子函数调用和样本 Shape 注释 |
 | day12 | 本地 train_val.py，同上修正，权重改存脚本旁 |
+| day13 | 概念按模块主题整理，原窗口代码待取得后归档 |
+| day14–16 | 《学习SGD优化器》的完整教学代码，概念按用户要求简要总结 |
 
 Day1–4 概念来自《学习Day1张量》，Day5–8 来自《学习Dataset数据集》，Day9–12 来自《学习Day9前向与损失》，计划来自《PyTorch学习规划》。Day1–12 概念均按学习窗口的教学顺序展开，保留设计动机、例子、反例、逐步代码说明与相关追问，并适配 GitHub 显示。学习与运行状态如实记录，不以脚本运行代替个人掌握情况。
+
+Day13–16 以原理和 API 配置为重点，概念采用简要总结。Day14–16 示例已运行验证，图表显示使用 Matplotlib。
