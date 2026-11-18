@@ -2,7 +2,7 @@
 
 24 天 · 6 个模块 · 每模块 4 天。目标是完成数据加载、训练、优化、验证、保存、恢复与实验分析，最后整合为训练项目。
 
-计划来源为《PyTorch学习规划》，每日概念和代码按学习窗口与本地练习归档。当前已学习 Day1–18。Day1–12、Day14–18 已归档代码。Day13 原窗口代码待补，Day17 概念已保存三段完整追问与代码，较早主讲解待补。Day19–24 为待学习占位。每天保留 `notes.md` 和 `code.py`。
+计划来源为《PyTorch学习规划》，每日概念和代码按学习窗口与本地练习归档。当前已学习 Day1–19。Day1–12、Day14–19 已归档代码。Day13 原窗口代码待补，Day17 概念已保存三段完整追问与代码，较早主讲解待补。Day20–24 为待学习占位。每天保留 `notes.md` 和 `code.py`。
 
 ## 24 天完整计划
 
@@ -48,7 +48,7 @@
 |---|---|---|---|---|---|
 | Day 17 | Gradient Accumulation | 梯度累积、有效 Batch Size、显存限制、Loss 缩放、最后不足一个累积周期的处理 | `gradient_accumulation.py`：比较真实大 Batch 与梯度累积 | [概念](day17/notes.md) · [代码](day17/code.py) | 代码已归档并运行，主讲解待补 |
 | Day 18 | Gradient Clipping | 梯度范数、梯度爆炸、clip_grad_norm_、梯度裁剪时机 | `gradient_clipping.py`：观察梯度裁剪前后的变化 | [概念](day18/notes.md) · [代码](day18/code.py) | 练习已归档并运行，完整讲解与追问已保存 |
-| Day 19 | Mixed Precision | FP32、FP16、BF16、autocast、GradScaler、显存与训练速度、数值稳定性 | `mixed_precision.py`：实现混合精度训练 | [概念](day19/notes.md) · [代码](day19/code.py) | 待学习 |
+| Day 19 | Mixed Precision | FP32、FP16、BF16、autocast、GradScaler、显存与训练速度、数值稳定性 | `mixed_precision.py`：实现混合精度训练 | [概念](day19/notes.md) · [代码](day19/code.py) | 练习已归档并运行，完整学习讲解已保存 |
 | Day 20 | Training Debug & Stability | Loss NaN、梯度消失、梯度爆炸、过拟合、数据异常、单 Batch 过拟合测试、异常检测、随机种子与排查流程 | `training_debug.py`：人为制造训练问题并定位原因 | [概念](day20/notes.md) · [代码](day20/code.py) | 待学习 |
 
 ### 模块6 · 训练工程与综合实战（Day 21–24）
@@ -101,9 +101,10 @@ python day15/code.py
 python day16/code.py
 python day17/code.py
 python day18/code.py
+python day19/code.py
 ```
 
-已在 Python 3.12 / PyTorch 2.11.0+cu128 环境运行 Day1–12，Day4 另验证 CPU 回退与 CUDA。生成权重被 Git 忽略。Day19–24 的代码文件仅有待学习注释，概念文件列明原计划主题和任务。
+已在 Python 3.12 / PyTorch 2.11.0+cu128 环境运行 Day1–12，Day4 另验证 CPU 回退与 CUDA。生成权重被 Git 忽略。Day20–24 的代码文件仅有待学习注释，概念文件列明原计划主题和任务。
 
 ## 来源与整理说明
 
@@ -125,6 +126,7 @@ python day18/code.py
 | day14–16 | 《学习SGD优化器》的完整教学代码，概念按用户要求简要总结 |
 | day17 | 本地 gradient_accumulation.py，修正 Loss 缩放漏除 group_size；三段完整追问已保存，主讲解待补 |
 | day18 | 本地 gradient_clipping.py，同上修正；完整讲解与裁剪返回值追问已保存 |
+| day19 | 本地 mixed_precision.py 原样归档；完整讲解保留例子、公式、逐步代码说明，已验证 CUDA BF16、FP16 + GradScaler 与 CPU FP32 回退 |
 
 Day1–4 概念来自《学习Day1张量》，Day5–8 来自《学习Dataset数据集》，Day9–12 来自《学习Day9前向与损失》，计划来自《PyTorch学习规划》。Day1–12 概念均按学习窗口的教学顺序展开，保留设计动机、例子、反例、逐步代码说明与相关追问，并适配 GitHub 显示。学习与运行状态如实记录，不以脚本运行代替个人掌握情况。
 
