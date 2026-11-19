@@ -124,7 +124,8 @@ python day20/code.py
 | day11 | 本地 train_loop.py，修正种子函数调用和样本 Shape 注释 |
 | day12 | 本地 train_val.py，同上修正，权重改存脚本旁 |
 | day13 | 概念按模块主题整理，原窗口代码待取得后归档 |
-| day14–16 | 《学习SGD优化器》的完整教学代码，概念按用户要求简要总结 |
+| day14–15 | 《学习SGD优化器》的完整教学代码，概念按用户要求简要总结 |
+| day16 | 《学习SGD优化器》的完整主讲解与封装 API 追问，保留原文顺序、公式、例子及完整教学代码；交互图适配为静态表格 |
 | day17 | 本地 gradient_accumulation.py，修正 Loss 缩放漏除 group_size；三段完整追问已保存，主讲解待补 |
 | day18 | 本地 gradient_clipping.py，同上修正；完整讲解与裁剪返回值追问已保存 |
 | day19 | 本地 mixed_precision.py 原样归档；完整讲解保留例子、公式、逐步代码说明，已验证 CUDA BF16、FP16 + GradScaler 与 CPU FP32 回退 |
@@ -132,7 +133,7 @@ python day20/code.py
 
 Day1–4 概念来自《学习Day1张量》，Day5–8 来自《学习Dataset数据集》，Day9–12 来自《学习Day9前向与损失》，计划来自《PyTorch学习规划》。Day1–12 概念均按学习窗口的教学顺序展开，保留设计动机、例子、反例、逐步代码说明与相关追问，并适配 GitHub 显示。学习与运行状态如实记录，不以脚本运行代替个人掌握情况。
 
-Day13–16 以原理和 API 配置为重点，概念采用简要总结。Day14–16 示例已运行验证，图表显示使用 Matplotlib。
+Day13–15 以原理和 API 配置为重点，概念采用简要总结。Day16 概念已按最新要求改为完整原文讲解与追问。Day14–16 示例已运行验证，图表显示使用 Matplotlib。
 
 ### Day20 运行验证
 
