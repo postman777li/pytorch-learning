@@ -2,7 +2,7 @@
 
 24 天 · 6 个模块 · 每模块 4 天。目标是完成数据加载、训练、优化、验证、保存、恢复与实验分析，最后整合为训练项目。
 
-计划来源为《PyTorch学习规划》，每日概念和代码按学习窗口与本地练习归档。当前已学习 Day1–20。Day1–12、Day14–20 已归档代码。Day13 原窗口代码待补，Day17 概念已保存三段完整追问与代码，较早主讲解待补。Day20 保存接口可取得的讲解（末尾总结句截断及交互内容缺失已注明）。Day21–24 为待学习占位。每天保留 `notes.md` 和 `code.py`。
+计划来源为《PyTorch学习规划》，每日概念和代码按学习窗口与本地练习归档。当前已学习 Day1–23。Day1–12、Day14–23 已归档代码。Day13 原窗口代码待补，Day17 概念已保存三段完整追问与代码，较早主讲解待补。Day20 保存接口可取得的讲解（末尾总结句截断及交互内容缺失已注明）。Day21 保存完整初讲和后续重写记录；Day22–23 保存可取得的全部讲解并注明长回复截断，代码已补齐并验证。Day24 为待学习占位。每天保留 `notes.md` 和 `code.py`。
 
 ## 24 天完整计划
 
@@ -55,9 +55,9 @@
 
 | 天数 | 主题 | 学习内容 | 原计划代码与任务 | 归档 | 状态 |
 |---|---|---|---|---|---|
-| Day 21 | Checkpoint | 模型保存、加载、state_dict、Optimizer State、Scheduler State、Scaler State、Epoch 和训练进度 | `checkpoint.py`：保存模型并恢复训练状态 | [概念](day21/notes.md) · [代码](day21/code.py) | 待学习 |
-| Day 22 | 断点续训与实验日志 | Resume Training、随机数状态恢复、TensorBoard、Loss 曲线、Learning Rate 曲线、实验配置管理、日志记录 | `experiment_logging.py`：实现完整实验记录 | [概念](day22/notes.md) · [代码](day22/code.py) | 待学习 |
-| Day 23 | 模型评估 | Train Loss、Validation Loss、Perplexity、Accuracy、Precision、Recall、F1、模型选择、测试集评估 | `evaluation.py`：实现模型评估与指标计算 | [概念](day23/notes.md) · [代码](day23/code.py) | 待学习 |
+| Day 21 | Checkpoint | 模型保存、加载、state_dict、Optimizer State、Scheduler State、Scaler State、Epoch 和训练进度 | `checkpoint.py`：保存模型并恢复训练状态 | [概念](day21/notes.md) · [代码](day21/code.py) | 完整讲解与本地练习已归档，保存及恢复已验证 |
+| Day 22 | 断点续训与实验日志 | Resume Training、随机数状态恢复、TensorBoard、Loss 曲线、Learning Rate 曲线、实验配置管理、日志记录 | `experiment_logging.py`：实现完整实验记录 | [概念](day22/notes.md) · [代码](day22/code.py) | 讲解及本地练习已归档，原文后半段待补；CPU/CUDA 续训与日志已验证 |
+| Day 23 | 模型评估 | Train Loss、Validation Loss、Perplexity、Accuracy、Precision、Recall、F1、模型选择、测试集评估 | `evaluation.py`：实现模型评估与指标计算 | [概念](day23/notes.md) · [代码](day23/code.py) | 讲解与教学代码已归档，原文后半段待补；最终测试代码补全并验证 |
 | Day 24 | 综合实战 | 串联数据处理、模型构建、训练、优化器、Scheduler、AMP、验证、Checkpoint、日志、断点续训 | `full_training_project/`：独立完成一个完整训练项目 | [概念](day24/notes.md) · [代码](day24/code.py) | 待学习 |
 
 ### 原计划中的补充重点
@@ -81,7 +81,7 @@ Day24 原计划产出为 `full_training_project/`。当前按每日两个文件�
 
 ## 运行
 
-需要 Python、PyTorch，Day4、Day20 另需 NumPy，Day15–16 绘图需 Matplotlib。PyTorch 的 CPU/CUDA 安装方式见[官方安装页](https://pytorch.org/get-started/locally/)。
+需要 Python、PyTorch，Day4、Day20 另需 NumPy，Day15–16 绘图需 Matplotlib，Day22 需 TensorBoard（`pip install tensorboard`）。PyTorch 的 CPU/CUDA 安装方式见[官方安装页](https://pytorch.org/get-started/locally/)。
 
 ```bash
 python day01/code.py
@@ -103,9 +103,12 @@ python day17/code.py
 python day18/code.py
 python day19/code.py
 python day20/code.py
+python day21/code.py
+python day22/code.py
+python day23/code.py
 ```
 
-已在 Python 3.12 / PyTorch 2.11.0+cu128 环境运行 Day1–12，Day4 另验证 CPU 回退与 CUDA。生成权重被 Git 忽略。Day21–24 的代码文件仅有待学习注释，概念文件列明原计划主题和任务。
+已在 Python 3.12 / PyTorch 2.11.0+cu128 环境运行 Day1–12，Day4 另验证 CPU 回退与 CUDA。生成权重被 Git 忽略。Day24 的代码文件仅有待学习注释，概念文件列明原计划主题和任务。
 
 ## 来源与整理说明
 
@@ -130,6 +133,9 @@ python day20/code.py
 | day18 | 本地 gradient_clipping.py，同上修正；完整讲解与裁剪返回值追问已保存 |
 | day19 | 本地 mixed_precision.py 原样归档；完整讲解保留例子、公式、逐步代码说明，已验证 CUDA BF16、FP16 + GradScaler 与 CPU FP32 回退 |
 | day20 | 本地 training_debug.py 原样归档，默认 nan_input 会按预期报错；保存接口返回的全部讲解，注明总结末句截断与交互内容缺口，并补充静态排查表与流程图 |
+| day21 | 《学习模型检查点保存》的完整初讲及按原水果分类流程重写的完整记录；本地 checkpoint.py 归档，权重改存脚本旁 |
+| day22 | 同一窗口可取得的全部讲解；完整程序中途被接口截断，使用本地 experiment_logging.py 补齐，实验目录改存脚本旁，后续原文待补 |
+| day23 | 同一窗口可取得的全部讲解及教学代码；本地 evaluation.py 为空，教学程序在加载最佳权重后被截断，归档时标注并补全最终测试和打印，权重改存脚本旁；后续原文待补 |
 
 Day1–4 概念来自《学习Day1张量》，Day5–8 来自《学习Dataset数据集》，Day9–12 来自《学习Day9前向与损失》，计划来自《PyTorch学习规划》。Day1–12 概念均按学习窗口的教学顺序展开，保留设计动机、例子、反例、逐步代码说明与相关追问，并适配 GitHub 显示。学习与运行状态如实记录，不以脚本运行代替个人掌握情况。
 
@@ -138,3 +144,11 @@ Day13–15 以原理和 API 配置为重点，概念采用简要总结。Day16 �
 ### Day20 运行验证
 
 本地练习默认 `fault_mode = "nan_input"`，直接运行会被输入检查主动中止，属于预期结果；改为 `normal` 可运行训练。已验证 CUDA BF16 下的 normal、nan_input、bad_label、gradient_big、gradient_zero 五种场景，以及 CPU FP32 正常训练与单 Batch 过拟合测试。正常训练完成 10 轮，验证准确率 58.33%；单 Batch 测试在 200 步内达到 100%。异常场景分别触发预期报错或梯度警告。运行验证不代表模型已充分收敛。
+
+### Day21–23 运行验证与来源缺口
+
+- Day21：CUDA FP16 下保存并恢复 Model、SGD Momentum、StepLR、GradScaler 与 Epoch 进度；从第6轮续训至第10轮，共100次实际更新。Day21 未保存随机数状态，不承诺完全复现中断前的数据顺序。
+- Day22：CPU FP32 和 CUDA FP16 分别验证“训练5轮退出，再重新运行续训”与“连续训练10轮”的最终模型权重逐元素相同；总更新次数100，Scheduler 状态一致，TensorBoard 三个指标均含第1–10轮记录。默认 `stop_after_epoch = 5` 用于演示第一次中断，重新运行会自动接着训练。运行产物在 `day22/runs/fruit_exp01`，可用 `python -m tensorboard.main --logdir day22/runs` 查看。
+- Day23：CUDA 上完成20轮训练、验证集选择最佳模型、加载最佳权重后的45条测试样本评估，Accuracy 和 Macro F1 均为1.0。另用手算的非对称混淆矩阵核对 Accuracy、Macro Precision/Recall/F1、Weighted F1，以及不等长 Batch 的平均 Loss。教学数据较简单，结果只代表本次示例。
+
+Day22、Day23 的窗口回复各被读取接口截断在20000字符处，浏览器补取未成功。概念文件没有主动压缩已取得的讲解，但两天后续原文尚未完整归档。Day22 的完整代码由本地练习补齐；Day23 的最终测试由归档补全并在代码和概念文件明确标注，不能视作原文。
